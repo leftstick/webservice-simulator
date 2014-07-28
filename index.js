@@ -1,3 +1,4 @@
+'use strict';
 var fs = require('fs');
 var express = require('express');
 var _ = require('lodash');
@@ -14,14 +15,14 @@ var defaults = {
     protocol: undefined
 };
 
-var validate = function(opts) {
+var validate = function (opts) {
     if (!utils.isNumeric(opts.port)) {
         throw new Error('port must be valid number');
     }
     this.port = utils.toNumber(opts.port);
 
     if (opts.protocol && this.supportProtocols.indexOf(opts.protocol) < 0) {
-        throw new Error('You\'ve set a invalid protocol. Only http or https is accepted');
+        throw new Error('You\'ve set a invalid protocol. Only http is accepted');
     }
 
     if (opts.protocol) {
@@ -39,41 +40,41 @@ var validate = function(opts) {
 };
 
 
-var Simulator = function(options) {
-    this.supportProtocols = ['http', 'https'];
+var Simulator = function (options) {
+    this.supportProtocols = ['http'];
     var opts = _.defaults(options || {}, defaults);
     validate.bind(this)(opts);
     this.app = express();
 };
 
-Simulator.prototype.registerInternalMiddlewares = function() {
+Simulator.prototype.registerInternalMiddlewares = function () {
     var _this = this;
     var mwsJson = require('./middlewares/middlewares');
     //register all the internal middlewares
-    mwsJson.forEach(function(value, index) {
+    mwsJson.forEach(function (value) {
         var mw = require('./middlewares/' + value);
         _this.app.use(mw());
     });
 };
 
-Simulator.prototype.configRouters = function() {
+Simulator.prototype.configRouters = function () {
     var _this = this;
     var jsons = utils.loadRouters(this.routerDir);
-    jsons.forEach(function(json) {
+    jsons.forEach(function (json) {
         _this.app.use(parser(json));
     });
 };
 
-Simulator.prototype.start = function() {
+Simulator.prototype.start = function () {
     var _this = this;
 
     this.registerInternalMiddlewares();
     this.configRouters();
 
-    this.protocols.forEach(function(protocol, index) {
+    this.protocols.forEach(function (protocol) {
         var protocolMod = require(protocol);
-        protocolMod.createServer(_this.app).listen(_this.port, function() {
-            console.log('%s server Listening on port %d', protocol, _this.port);
+        protocolMod.createServer(_this.app).listen(_this.port, function () {
+            logger.success(protocol + ' server Listening on port ' + _this.port);
         });
     });
 
