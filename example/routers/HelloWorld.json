@@ -1,0 +1,8 @@
+{
+    "when": "/hello",
+    "method": "all",
+    "responseData": {
+        "title": "hello",
+        "content": "world"
+    }
+}

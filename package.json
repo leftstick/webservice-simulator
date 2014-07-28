@@ -1,0 +1,38 @@
+{
+  "name": "webservice-simulator",
+  "version": "1.0.0",
+  "description": "Webservice-simulator is simple use, hot upgrade-able module, by which you can build up your backend webservice quickly without any help from the backend team/developer",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leftstick/webservice-simulator.git"
+  },
+  "keywords": [
+    "webservice",
+    "simulator"
+  ],
+  "files": [
+    "index.js",
+    "libs",
+    "middlewares"
+  ],
+  "author": {
+    "name": "Howard.Zuo",
+    "email": "leftstick@qq.com",
+    "url": "https://github.com/leftstick"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leftstick/webservice-simulator/issues"
+  },
+  "homepage": "https://github.com/leftstick/webservice-simulator",
+  "engines": {
+    "node": ">= 0.10"
+  },
+  "dependencies": {
+    "body-parser": "^1.5.2",
+    "chalk": "^0.5.1",
+    "express": "^4.7.2",
+    "lodash": "^2.4.1"
+  }
+}

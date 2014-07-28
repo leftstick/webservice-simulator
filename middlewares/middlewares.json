@@ -1,0 +1,5 @@
+[
+    "cors",
+    "bodyJsonParser",
+    "bodyUrlencodedParser"
+]
