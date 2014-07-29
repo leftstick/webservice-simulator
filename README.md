@@ -72,6 +72,38 @@ The server type which you'd like to launch.
 > Note: Only `http` is accepted right now 
 
 
+## Play with example ##
+
+### Clone `webservice-simulator` ###
+
+```shell
+git clone git@github.com:leftstick/webservice-simulator.git
+```
+
+### install dependencies ###
+
+```shell
+cd webservice-simulator
+npm install
+```
+> you may want to use a more efficient by [sero-cli](https://github.com/leftstick/Sero-cli)
+
+### launch example ###
+
+```shell
+example/example.js
+```
+
+### play ###
+
+Now, you have the simulator setup. which provides following apis:
+
+- http://[localhost]:8000/hello
+- http://[localhost]:8000/datafile
+
+Make your client send those request. And see the response.
+
+
 ## LICENSE ##
 
 [MIT License](https://raw.githubusercontent.com/leftstick/webservice-simulator/master/LICENSE)
