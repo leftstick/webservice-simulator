@@ -3,6 +3,7 @@ var chalk = require('chalk');
 var convertInput = function(parameters) {
     var args = Array.prototype.slice.call(parameters);
     args = args.map(function(value, index) {
+
         if (typeof value === 'object') {
             try {
                 return JSON.stringify(value);

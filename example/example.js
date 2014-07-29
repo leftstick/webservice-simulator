@@ -6,5 +6,5 @@ var path = require('path');
 var Sim = require('../index');
 
 new Sim({
-    routerDir: path.resolve('.', 'routers')
+    routerDir: path.resolve(__dirname, 'routers')
 }).start();
