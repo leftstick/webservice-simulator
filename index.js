@@ -60,11 +60,20 @@ Simulator.prototype.registerInternalMiddlewares = function() {
     });
 };
 
+Simulator.prototype.loadRouters = function() {
+    var routers = utils.loadRouters(this.routerDir);
+    var _this = this;
+    routers.forEach(function(router) {
+        _this.app.use(parser(router));
+    });
+};
+
 Simulator.prototype.start = function() {
     var _this = this;
 
     this.initApp();
     this.registerInternalMiddlewares();
+    this.loadRouters();
 
     this.protocols.forEach(function(protocol) {
         var protocolMod = require(protocol);
