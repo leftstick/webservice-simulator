@@ -1,6 +1,6 @@
 {
   "name": "webservice-simulator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Webservice-simulator is simple use, hot upgrade-able module, by which you can build up your backend webservice quickly without any help from the backend team/developer",
   "main": "index.js",
   "repository": {
