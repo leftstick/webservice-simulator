@@ -1,3 +1,4 @@
+'use strict';
 var fs = require('fs');
 var path = require('path');
 
@@ -16,24 +17,10 @@ var Utils = {
         });
 
         return validRouterFiles.map(function(value) {
-            var module = {
+            return {
                 path: path.join(routerDir, value),
                 mod: require(path.join(routerDir, value.substring(0, value.indexOf('.json'))))
             };
-
-            if (module.mod.responseData) {
-                delete module.mod.responseFile;
-            }
-
-            if (module.mod.responseFile && typeof module.mod.responseFile !== 'string') {
-                throw new Error('You\'ve set invalid responseFile, it must be string');
-            }
-
-            if (module.mod.responseFile) {
-                module.mod.responseData = require(path.join(routerDir, '../', 'data', module.mod.responseFile));
-            }
-
-            return module;
         });
     }
 };
