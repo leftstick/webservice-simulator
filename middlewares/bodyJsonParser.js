@@ -1,9 +1,8 @@
-var express = require('express');
-
-//Returns middleware that only parses json
 var jsonParser = function() {
-    var bodyParser = require('body-parser');
-    return bodyParser.json();
+    //config json parser
+    'use strict';
+    var body = require('body-parser');
+    this.app.use(body.json());
 };
 
 module.exports = jsonParser;

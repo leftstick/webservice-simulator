@@ -14,7 +14,7 @@ example
 
 ### Route configuration file structure ###
 
-#### Figure1 ####
+#### Simple mock for all http method ####
 ```JavaScript
 {
     "when": "/hello",
@@ -26,19 +26,38 @@ example
 }
 ```
 
-#### Figure2 ####
+#### Simple mock for responding from a datafile ####
 ```JavaScript
 {
-    "when": "/hello",
+    "when": "/datafile",
     "method": "all",
     "responseFile": "data01"
 }
 ```
 
+> `data01` indicates a `data01.json` placed under `data` folder which besides `routers` directory.
+
+#### Simple mock for websocket requirements ####
+```JavaScript
+{
+    "type": "ws",
+    "when": "/askfordata",
+    "interval": 3000,
+    "responseData":{
+        "isDirty": true
+    }
+}
+```
+
+> This create an websocket listener for specified `when`, and send message to client every `interval` millisecond
+
+
 | Attribute        | Type           | Required  | Description |
 | :------------- |:-------------| :-----:| :-----|
+| type | string | No | `http` or `ws`. `http` is used as default |
 | when | string | Yes | the `path` the Router |
-| method | string | Yes | the `VERB` supported by `express`.(For example: `get`, `post`, `put`, `update`, `delete`, `all`) |
+| method | string | No | the `VERB` supported by `express`.(For example: `get`, `post`, `put`, `update`, `delete`, `all`). Only required in `http` type |
+| interval | int | No | the frequency used in `ws` type |
 | responseData | object | No |  | the data will be sent to client as response content
 | responseFile | string | No | a file name without extension in which you have the response data in it |
 

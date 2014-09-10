@@ -1,8 +1,9 @@
 webservice-simulator
 ====================
 
-![](http://img.shields.io/badge/npm_module-v1.0.1-green.svg?style=flat)  ![](http://img.shields.io/badge/dependencies-latest-yellowgreen.svg?style=flat)
-![](http://img.shields.io/badge/build-passing-brightgreen.svg?style=flat)
+[![NPM version][npm-image]][npm-url]
+![][david-url]
+![][travis-url]
 
 Webservice-simulator is simple use module, by which you can build up your backend webservice quickly without any help from the backend team/developer.
 
@@ -16,7 +17,7 @@ That's why i wrote the `webservice-simulator`.
 ## Installation ##
 
 ```shell
-npm install webservice-simulator
+npm install webservice-simulator --save-dev
 ```
 
 ## Usage ##
@@ -63,15 +64,6 @@ The route configurations directory from where `webservice-simulator` read config
 
 [How to write route configuration file](./docs/how_to_write_route_config.md)
 
-#### options.protocol
-Type: `String`
-
-Default: `http`
-
-The server type which you'd like to launch.
-> Note: Only `http` is accepted right now 
-
-
 ## Play with example ##
 
 ### Clone `webservice-simulator` ###
@@ -98,8 +90,9 @@ example/example.js
 
 Now, you have the simulator setup. which provides following apis:
 
-- http://[localhost]:8000/hello
-- http://[localhost]:8000/datafile
+- `/datafile`, for `all` http method
+- `/hello`, for `get` http method
+- `/askfordata`, for `websocket` interreaction
 
 Make your client send those request. And see the response.
 
@@ -107,3 +100,10 @@ Make your client send those request. And see the response.
 ## LICENSE ##
 
 [MIT License](https://raw.githubusercontent.com/leftstick/webservice-simulator/master/LICENSE)
+
+
+
+[npm-url]: https://npmjs.org/package/webservice-simulator
+[npm-image]: https://badge.fury.io/js/webservice-simulator.png
+[david-url]:https://david-dm.org/leftstick/webservice-simulator.png
+[travis-url]:https://api.travis-ci.org/leftstick/webservice-simulator.svg?branch=master

@@ -1,6 +1,6 @@
 {
   "name": "webservice-simulator",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Webservice-simulator is simple use, hot upgrade-able module, by which you can build up your backend webservice quickly without any help from the backend team/developer",
   "main": "index.js",
   "repository": {
@@ -11,6 +11,9 @@
     "webservice",
     "simulator"
   ],
+  "scripts": {
+    "test": "mocha --reporter nyan"
+  },
   "files": [
     "index.js",
     "libs",
@@ -30,9 +33,15 @@
     "node": ">= 0.10"
   },
   "dependencies": {
-    "body-parser": "^1.5.2",
+    "body-parser": "^1.8.1",
     "chalk": "^0.5.1",
-    "express": "^4.7.2",
-    "lodash": "^2.4.1"
+    "express": "^4.9.0",
+    "lodash": "^2.4.1",
+    "ws": "^0.4.32"
+  },
+  "devDependencies": {
+    "mocha": "^1.21.4",
+    "request": "^2.42.0",
+    "should": "^4.0.4"
   }
 }

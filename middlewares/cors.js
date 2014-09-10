@@ -1,13 +1,9 @@
-var express = require('express');
-
 
 var cors = function() {
-    var router = express.Router();
+    'use strict';
 
-    /**
-     * CORS support.
-     */
-    router.all('*', function(req, res, next) {
+    //config cors
+    this.app.use('*', function(req, res, next) {
         if (!req.get('Origin')) {
             return next();
         }
@@ -20,11 +16,6 @@ var cors = function() {
         }
         next();
     });
-
-    return router;
-
 };
-
-
 
 module.exports = cors;

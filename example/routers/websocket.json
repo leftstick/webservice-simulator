@@ -1,0 +1,8 @@
+{
+    "type": "ws",
+    "when": "/askfordata",
+    "interval": 1000,
+    "responseData":{
+        "isDirty": true
+    }
+}

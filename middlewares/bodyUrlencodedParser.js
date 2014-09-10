@@ -1,11 +1,11 @@
-var express = require('express');
 
-//Returns middleware that only parses urlencoded bodies
 var urlencodedParser = function() {
-    var bodyParser = require('body-parser');
-    return bodyParser.urlencoded({
+    'use strict';
+    //config urlencodedParser
+    var body = require('body-parser');
+    this.app.use(body.urlencoded({
         extended: false
-    });
+    }));
 };
 
 module.exports = urlencodedParser;

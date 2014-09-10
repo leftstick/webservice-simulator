@@ -1,6 +1,6 @@
 {
     "when": "/hello",
-    "method": "all",
+    "method": "get",
     "responseData": {
         "title": "hello",
         "content": "world, i am your uncle"
