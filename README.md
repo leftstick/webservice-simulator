@@ -28,8 +28,7 @@ var Simulator = require('webservice-simulator');
 
 new Simulator({
     port: 9900,
-    routerDir: path.resolve(__dirname, 'routers'),
-    protocol: 'http'
+    routerDir: path.resolve(__dirname, 'routers')
 }).start();
 ```
 
