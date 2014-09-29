@@ -1,4 +1,3 @@
-
 var cors = function() {
     'use strict';
 
@@ -9,8 +8,8 @@ var cors = function() {
         }
         // use "*" here to accept any origin
         res.set('Access-Control-Allow-Origin', '*');
-        res.set('Access-Control-Allow-Methods', 'PUT');
-        res.set('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type');
+        res.set('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT, HEAD, TRACE, DELETE');
+        res.set('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Range');
         if ('OPTIONS' === req.method) {
             return res.status(200).end();
         }
