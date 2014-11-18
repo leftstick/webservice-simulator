@@ -1,5 +1,6 @@
 [
     "cors",
     "bodyJsonParser",
-    "bodyUrlencodedParser"
+    "bodyUrlencodedParser",
+    "staticFiles"
 ]
