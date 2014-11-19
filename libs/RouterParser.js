@@ -42,10 +42,18 @@ var RouterParser = function(module) {
                     return;
                 }
                 matched = _.find(routerJson.responseMap, function(item) {
-                    return _.where([req.query], item.query).length > 0;
+                    return item.query && _.where([req.query], item.query).length > 0;
                 });
+
                 if (matched) {
                     res.send(matched.responseData);
+                    return;
+                }
+                matched = _.find(routerJson.responseMap, function(item) {
+                    return item.default;
+                });
+                if (matched) {
+                    res.send(matched.default);
                     return;
                 }
                 res.statusCode = 404;

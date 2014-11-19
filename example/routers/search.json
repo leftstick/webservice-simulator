@@ -10,6 +10,11 @@
                 "title": "hello",
                 "content": "world, i am your uncle"
             }
+        },{
+            "default":{
+                "name": "defaultName",
+                "content": "Default content"
+            }
         }
     ]
 }
