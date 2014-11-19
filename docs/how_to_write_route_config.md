@@ -4,11 +4,8 @@
 
 <pre>
 example
-      |--data
-            |--data01.json
       |--routers
                 |--HelloWorld.json
-                |--DataFile.json
                 ......
 </pre>
 
@@ -25,17 +22,6 @@ example
     }
 }
 ```
-
-#### Simple mock for responding from a datafile ####
-```JavaScript
-{
-    "when": "/datafile",
-    "method": "all",
-    "responseFile": "data01"
-}
-```
-
-> `data01` indicates a `data01.json` placed under `data` folder which besides `routers` directory.
 
 #### Simple mock for websocket requirements ####
 ```JavaScript

@@ -89,7 +89,6 @@ example/example.js
 
 Now, you have the simulator setup. which provides following apis:
 
-- `/datafile`, for `all` http method
 - `/hello`, for `get` http method
 - `/askfordata`, for `websocket` interreaction
 - `/2.jpg`, to access the static file

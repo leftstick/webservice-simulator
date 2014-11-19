@@ -1,4 +1,3 @@
-
 var _ = require('lodash');
 
 var httpDefaults = {
@@ -34,7 +33,26 @@ var RouterParser = function(module) {
 
     if (routerJson.type === 'http') {
         this.app[routerJson.method](routerJson.when, function(req, res) {
-            res.send(routerJson.responseData);
+            if (routerJson.responseMap) {
+                var matched = _.find(routerJson.responseMap, function(item) {
+                    return JSON.stringify(item.query) === JSON.stringify(req.query);
+                });
+                if (matched) {
+                    res.send(matched.responseData);
+                    return;
+                }
+                matched = _.find(routerJson.responseMap, function(item) {
+                    return _.where([req.query], item.query).length > 0;
+                });
+                if (matched) {
+                    res.send(matched.responseData);
+                    return;
+                }
+                res.statusCode = 404;
+                res.send('Cannot ' + req.method + ' ' + req.originalUrl);
+            } else {
+                res.send(routerJson.responseData);
+            }
         });
     } else {
         var WebSocketServer = require('ws').Server;

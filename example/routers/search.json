@@ -1,0 +1,15 @@
+{
+    "when": "/search",
+    "method": "get",
+    "responseMap": [
+        {
+            "query": {
+                "id": "test"
+            },
+            "responseData": {
+                "title": "hello",
+                "content": "world, i am your uncle"
+            }
+        }
+    ]
+}

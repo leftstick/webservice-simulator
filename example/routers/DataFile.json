@@ -1,5 +1,0 @@
-{
-    "when": "/datafile",
-    "method": "all",
-    "responseFile":"data01"
-}
