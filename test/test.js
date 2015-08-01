@@ -5,7 +5,6 @@ var request = require('request');
 var WebSocket = require('ws');
 
 var describe = require('mocha').describe;
-var afterEach = require('mocha').afterEach;
 var it = require('mocha').it;
 var should = require('should');
 
@@ -23,13 +22,11 @@ describe('basic test', function() {
     });
 
     it('test simple get', function(done) {
-        request({
-            url: 'http://127.0.0.1:' + port + '/hello'
-        }, function(err, response, raw) {
-                var data = JSON.parse(raw);
-                should(data.title).eql('hello', 'title should be hello, but actually is ' + data.title);
-                done();
-            });
+        request({url: 'http://127.0.0.1:' + port + '/hello'}, function(err, response, raw) {
+            var data = JSON.parse(raw);
+            should(data.title).eql('hello', 'title should be hello, but actually is ' + data.title);
+            done();
+        });
     });
 
     it('test simple websocket', function(done) {
