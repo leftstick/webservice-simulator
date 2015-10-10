@@ -1,6 +1,6 @@
 {
   "name": "webservice-simulator",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "description": "Webservice-simulator is simple use, hot upgrade-able module, by which you can build up your backend webservice quickly without any help from the backend team/developer",
   "main": "index.js",
   "repository": {
@@ -30,18 +30,18 @@
   },
   "homepage": "https://github.com/leftstick/webservice-simulator",
   "engines": {
-    "node": ">= 0.10"
+    "node": ">= 0.12"
   },
   "dependencies": {
-    "body-parser": "^1.13.3",
-    "chalk": "^1.1.0",
-    "express": "^4.13.2",
+    "body-parser": "^1.14.1",
+    "chalk": "^1.1.1",
+    "express": "^4.13.3",
     "lodash": "^3.10.0",
-    "mocha": "^2.2.5",
-    "request": "^2.60.0",
+    "mocha": "^2.3.3",
+    "request": "^2.64.0",
     "serve-static": "^1.10.0",
-    "should": "^7.0.2",
-    "ws": "^0.7.2"
+    "should": "^7.1.0",
+    "ws": "^0.8.0"
   },
   "devDependencies": {}
 }
